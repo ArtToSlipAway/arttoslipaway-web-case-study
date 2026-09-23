@@ -30,7 +30,24 @@ The production source code, infrastructure configuration, credentials, customer 
 
 ## Architecture
 
-See [docs/architecture.md](docs/architecture.md).
+```mermaid
+flowchart TD
+    A[Public Website] --> B[Nginx]
+    B --> C[FastAPI Backend]
+
+    C --> D[(PostgreSQL)]
+    C --> E[CRM]
+    C --> F[Protected Client Cabinet]
+
+    E --> G[Telegram Integration]
+    E --> H[AI-assisted Workflows]
+    E --> I[Content Workflow]
+
+    F --> D
+    E --> D
+```
+
+Detailed architecture: [docs/architecture.md](docs/architecture.md).
 
 ## Production
 
